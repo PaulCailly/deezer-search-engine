@@ -3,15 +3,14 @@ services:
   server:
     build: ./server
     expose:
-      - ${NODE_API_PORT}
+      - ${REACT_APP_API_PORT}
     environment:
-      NODE_API_HOST: ${NODE_API_HOST}
-      NODE_API_PORT: ${NODE_API_PORT}
+      REACT_APP_API_PORT: ${REACT_APP_API_PORT}
       DEEZER_API_BASE_URL: ${DEEZER_API_BASE_URL}
       LAST_FM_BASE_URL: ${LAST_FM_BASE_URL}
       LAST_FM_API_KEY: ${LAST_FM_API_KEY}
     ports:
-      - ${NODE_API_PORT}:${NODE_API_PORT}
+      - ${REACT_APP_API_PORT}:${REACT_APP_API_PORT}
     volumes:
       - ./server/src:/srv/app/server/src
     command: npm run start

@@ -34,6 +34,6 @@ app.get("/track/:query", async (req, res) => {
 });
 
 // Start
-app.listen(process.env.NODE_API_PORT, () => {
-  console.log(`Listening on port ${process.env.NODE_API_PORT}`);
+app.listen(process.env.REACT_APP_API_PORT, () => {
+  console.log(`Listening on port ${process.env.REACT_APP_API_PORT}`);
 });
