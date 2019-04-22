@@ -3,7 +3,7 @@ import axios from "axios";
 import dataFetchReducer from "./reducer";
 import { usePrevious } from "./../use-previous/usePrevious";
 
-const useDataApi = ressource => {
+const useDataApi = () => {
   const [queryInput, setQueryInput] = useState();
   const [queryIndex, setQueryIndex] = useState();
 
@@ -27,7 +27,7 @@ const useDataApi = ressource => {
           const query = encodeURI(
             `http://${process.env.REACT_APP_API_HOST}:${
               process.env.REACT_APP_API_PORT
-            }/${ressource}/${queryInput}&index=${queryIndex}`
+            }/track/${queryInput}&index=${queryIndex}`
           );
           const result = await axios(query);
           dispatch({ type: "FETCH_SUCCESS", payload: result.data });

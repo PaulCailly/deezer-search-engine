@@ -6,7 +6,7 @@ WORKDIR /srv/app/server
 COPY package.json /srv/app/server
 COPY package-lock.json /srv/app/server
 
-RUN npm install
+RUN npm install --silent
 
 COPY . /srv/app/server
 CMD ["npm", "run", "start"]

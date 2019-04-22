@@ -1,5 +1,5 @@
 {
-  "name": "deezer-api",
+  "name": "deezer-search-engine-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
