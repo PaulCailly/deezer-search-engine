@@ -13,6 +13,22 @@ cd deezer-search-engine
 docker-compose up --build
 ```
 
+## Tests
+
+### Client
+
+```
+cd deezer-search-engine/client
+npm run test
+```
+
+### Server
+
+```
+cd deezer-search-engine/server
+npm run test
+```
+
 ## Built with
 
 - [React](https://reactjs.org/)
