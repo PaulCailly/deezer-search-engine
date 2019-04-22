@@ -12,7 +12,7 @@ import "./index.scss";
 const App = () => {
   const [inputValue, setInputValue] = useState("");
   const debouncedInputValue = useDebounce(inputValue, 300);
-  const { data, isLoading, /* isError */ doFetch } = useDataApi("track");
+  const { data, isLoading, isError, error, doFetch } = useDataApi("track");
 
   useLayoutEffect(() => {
     doFetch(debouncedInputValue, 0);
@@ -22,6 +22,7 @@ const App = () => {
     <div>
       {isLoading && <LinearProgress className="linearProgress" />}
       <SearchInput inputValue={inputValue} setInputValue={setInputValue} />
+      {isError && <div className="errorMessage">{error.message}</div>}
       {inputValue && (
         <div>
           <Datagrid data={data} inputValue={inputValue} doFetch={doFetch} />

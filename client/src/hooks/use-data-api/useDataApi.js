@@ -12,7 +12,8 @@ const useDataApi = ressource => {
   const [state, dispatch] = useReducer(dataFetchReducer, {
     isLoading: false,
     isError: false,
-    data: []
+    data: [],
+    error: {}
   });
 
   useEffect(() => {
@@ -25,13 +26,13 @@ const useDataApi = ressource => {
         try {
           const query = encodeURI(
             `http://${process.env.REACT_APP_API_HOST}:${
-              process.env.REACT_APP_API_PORT
+              process.env.REACT_APP_API_POR
             }/${ressource}/${queryInput}&index=${queryIndex}`
           );
           const result = await axios(query);
           dispatch({ type: "FETCH_SUCCESS", payload: result.data });
         } catch (error) {
-          dispatch({ type: "FETCH_FAILURE" });
+          dispatch({ type: "FETCH_FAILURE", payload: error });
         }
       }
     };
