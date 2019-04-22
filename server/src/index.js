@@ -34,6 +34,8 @@ app.get("/track/:query", async (req, res) => {
 });
 
 // Start
-app.listen(process.env.REACT_APP_API_PORT, () => {
-  console.log(`Listening on port ${process.env.REACT_APP_API_PORT}`);
+app.listen(process.env.REACT_APP_API_PORT || 5000, () => {
+  console.log(`Listening on port ${process.env.REACT_APP_API_PORT || 5000}`);
 });
+
+module.exports = app;
