@@ -26,7 +26,7 @@ const useDataApi = ressource => {
         try {
           const query = encodeURI(
             `http://${process.env.REACT_APP_API_HOST}:${
-              process.env.REACT_APP_API_POR
+              process.env.REACT_APP_API_PORT
             }/${ressource}/${queryInput}&index=${queryIndex}`
           );
           const result = await axios(query);
