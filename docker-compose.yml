@@ -1,0 +1,33 @@
+version: "3"
+services:
+  server:
+    build: ./server
+    expose:
+      - ${NODE_API_PORT}
+    environment:
+      NODE_API_HOST: ${NODE_API_HOST}
+      NODE_API_PORT: ${NODE_API_PORT}
+      DEEZER_API_BASE_URL: ${DEEZER_API_BASE_URL}
+      LAST_FM_BASE_URL: ${LAST_FM_BASE_URL}
+      LAST_FM_API_KEY: ${LAST_FM_API_KEY}
+    ports:
+      - ${NODE_API_PORT}:${NODE_API_PORT}
+    volumes:
+      - ./server/src:/srv/app/server/src
+    command: npm run start
+  client:
+    build: ./client
+    expose:
+      - ${REACT_APP_PORT}
+    environment:
+      - REACT_APP_PORT=${REACT_APP_PORT}
+      - REACT_APP_API_HOST=${REACT_APP_API_HOST}
+      - REACT_APP_API_PORT=${REACT_APP_API_PORT}
+    ports:
+      - ${REACT_APP_PORT}:${REACT_APP_PORT}
+    volumes:
+      - ./client/src:/srv/app/client/src
+      - ./client/public:/srv/app/client/public
+    links:
+      - server
+    command: npm run start

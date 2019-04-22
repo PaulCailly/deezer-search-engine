@@ -24,7 +24,9 @@ const useDataApi = ressource => {
         dispatch({ type: "FETCH_INIT" });
         try {
           const query = encodeURI(
-            `http://192.168.2.126:5000/${ressource}/${queryInput}&index=${queryIndex}`
+            `http://${process.env.REACT_APP_API_HOST}:${
+              process.env.REACT_APP_API_PORT
+            }/${ressource}/${queryInput}&index=${queryIndex}`
           );
           const result = await axios(query);
           dispatch({ type: "FETCH_SUCCESS", payload: result.data });
