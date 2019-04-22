@@ -11,7 +11,7 @@ import "./styles.scss";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");
-  const debouncedInputValue = useDebounce(inputValue, 300);
+  const debouncedInputValue = useDebounce(inputValue, 500);
   const { data, isLoading, isError, error, doFetch } = useDataApi("track");
 
   useLayoutEffect(() => {
