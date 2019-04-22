@@ -1,0 +1,29 @@
+@import "./../../../index.scss";
+
+.biographyModal__content {
+  background-color: white;
+  padding: 3em;
+  height: 50%;
+  overflow: scroll;
+}
+
+.biographyModal__content__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.biographyModal__content__header__title {
+  font-size: 2em;
+}
+
+.biographyModal__content__header__closeButton {
+  svg {
+    font-size: 1.5em;
+  }
+}
+
+.biographyModal__content__description {
+  font-size: 1em;
+}

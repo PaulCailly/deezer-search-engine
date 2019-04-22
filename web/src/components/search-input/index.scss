@@ -1,0 +1,37 @@
+@import "./../../index.scss";
+
+.searchInput--container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.searchInput {
+  height: 100px;
+  & > div {
+    height: 100%;
+    margin-top: 0 !important;
+  }
+  & input {
+    font-size: 2em;
+  }
+  @media ($small) {
+    & input {
+      font-size: 3em;
+    }
+  }
+}
+
+.searchInput__adornment {
+  svg {
+    font-size: 2em;
+  }
+  @media ($small) {
+    svg {
+      font-size: 3em;
+    }
+  }
+}
+.searchInput__label {
+  display: none;
+}
