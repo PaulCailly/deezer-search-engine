@@ -7,7 +7,7 @@ import SearchInput from "./components/search-input/SearchInput";
 import Datagrid from "./components/datagrid/Datagrid";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
-import "./index.scss";
+import "./styles.scss";
 
 const App = () => {
   const [inputValue, setInputValue] = useState("");

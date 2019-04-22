@@ -19,7 +19,7 @@ import BiographyTypeProvider from "./data-type-providers/biography-type-provider
 import DurationTypeProvider from "./data-type-providers/duration-type-provider/DurationTypeProvider";
 import CustomRow from "./custom-row/CustomRow";
 
-import "./index.scss";
+import "./styles.scss";
 
 const Datagrid = ({ data, inputValue, doFetch }) => {
   const [open, setOpen] = useState(false);

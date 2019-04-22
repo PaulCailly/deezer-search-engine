@@ -1,0 +1,8 @@
+@import "./../../../../styles.scss";
+
+.biographyTypeProvider__link {
+  &:hover {
+    cursor: pointer;
+    color: blue;
+  }
+}

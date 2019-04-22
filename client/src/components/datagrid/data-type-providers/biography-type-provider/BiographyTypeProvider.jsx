@@ -2,16 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import { DataTypeProvider } from "@devexpress/dx-react-grid";
 
+import "./styles.scss";
+
 const BiographyTypeProvider = ({ setOpen, setModalContent, ...props }) => (
   <DataTypeProvider
     formatterComponent={({ value }) => (
       <div
+        className="biographyTypeProvider__link"
         onClick={() => {
           setOpen(true);
           setModalContent(value);
         }}
       >
-        <div>{value.biography || "-"}</div>
+        {value.biography || "-"}
       </div>
     )}
     {...props}

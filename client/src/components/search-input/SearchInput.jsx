@@ -5,7 +5,7 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
 
-import "./index.scss";
+import "./styles.scss";
 
 const SearchInput = ({ inputValue, setInputValue }) => (
   <div className="searchInput--container">

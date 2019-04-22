@@ -5,7 +5,7 @@ import Modal from "@material-ui/core/Modal";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 
-import "./index.scss";
+import "./styles.scss";
 
 const BiographyModal = ({ open, setOpen, modalContent }) => {
   return (
