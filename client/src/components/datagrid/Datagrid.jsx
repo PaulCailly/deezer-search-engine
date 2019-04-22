@@ -31,6 +31,7 @@ const Datagrid = ({ data, inputValue, doFetch }) => {
           open={open}
           setOpen={setOpen}
           modalContent={modalContent}
+          data-testid="modal"
         />
       )}
       <div className="dataGrid--container">

@@ -12,7 +12,10 @@ const BiographyModal = ({ open, setOpen, modalContent }) => {
     <Modal open={open} onClose={() => setOpen(false)}>
       <div className="biographyModal__content">
         <div className="biographyModal__content__header">
-          <div className="biographyModal__content__header__title">
+          <div
+            className="biographyModal__content__header__title"
+            data-testid="name"
+          >
             {modalContent.name}
           </div>
           <div className="biographyModal__content__header__closeButton">
@@ -21,8 +24,11 @@ const BiographyModal = ({ open, setOpen, modalContent }) => {
             </IconButton>
           </div>
         </div>
-        <div className="biographyModal__content__description">
-          {modalContent.biography || "-"}
+        <div
+          className="biographyModal__content__description"
+          data-testid="biography"
+        >
+          {modalContent.biography}
         </div>
       </div>
     </Modal>
